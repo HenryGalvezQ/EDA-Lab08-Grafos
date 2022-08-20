@@ -122,10 +122,12 @@ b) Mostrar la lista de adyacencia del grafo.
 ## CUESTIONARIO
 #
 1. ¿Cuantas variantes del algoritmo de Dijkstra hay y cuál es la diferencia entre
-ellas? (1 puntos)
+ellas? (1 puntos)  
+    
 2. Invetigue sobre los ALGORITMOS DE CAMINOS MINIMOS e indique, ¿Qué
 similitudes encuentra, qué diferencias, en qué casos utilizar y porque? (2 puntos)
 
+    <img src="img/RptaDijkstra.png">  
 ## REFERENCIAS
 [1] Weiss M., Data Structures & Problem Solving Using Java, 2010, Addison-Wesley.  
 [2] Escuela de Pedagogía en Educación Matemática, Marcelino Álvarez, et.al.,  
