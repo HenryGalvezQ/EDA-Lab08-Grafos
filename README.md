@@ -108,11 +108,17 @@ corps y crops no lo son.
 a) Dibuje el grafo definido por las siguientes palabras: words cords corps coops
 crops drops drips grips gripe grape graph  
 
--Para la creación del grafo se encontró que cada nodo era inmediatamente adyacente al siguiente ya que solo varían en una sola letra así words, cords, corps, etc, están conectados entre sí pero sin ser un grafo cíclico pero sí conexo.  
+    -Para la creación del grafo se encontró que cada nodo era inmediatamente adyacente al siguiente ya que solo varían en una sola letra así words, cords, corps, etc, están conectados entre sí pero sin ser un grafo cíclico pero sí conexo.  
 <img src="img/4aGrafos.jpg">  
 
-b) Mostrar la lista de adyacencia del grafo.  
+b) Mostrar la lista de adyacencia del grafo.   
 
+    -Para la elaboración de la lista de adyacencia se hizo una revisión teórica.
+    -Utilizando el gráfico anterior se elaboró que el primer nodo tenga una sola conexión 
+    el cual es su nodo adyacente siguiente, los demás dos conexiones (su nodo adyacente anterior y posterior)
+    y el último una sola conexión la cual es su nodo adyacente anterior.  
+<img src="img/4bListaAdyacencia.jpg">  
+    
 ## CUESTIONARIO
 #
 1. ¿Cuantas variantes del algoritmo de Dijkstra hay y cuál es la diferencia entre
