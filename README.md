@@ -98,6 +98,20 @@ incluido en otro. Los parametros de entrada son 2 grafos y la salida del metodo 
 true si hay inclusion y false el caso contrario. (4 puntos)
 
 ## RESOLUCIÓN
+#
+
+4. Solucionar el siguiente ejercicio: (5 puntos)
+El grafo de palabras se define de la siguiente manera: cada vértice es una palabra
+en el idioma Inglés y dos palabras son adyacentes si difieren exactamente en una
+posición. Por ejemplo, las cords y los corps son adyacentes, mientras que los
+corps y crops no lo son.  
+a) Dibuje el grafo definido por las siguientes palabras: words cords corps coops
+crops drops drips grips gripe grape graph  
+
+-Para la creación del grafo se encontró que cada nodo era inmediatamente adyacente al siguiente ya que solo varían en una sola letra así words, cords, corps, etc, están conectados entre sí pero sin ser un grafo cíclico pero sí conexo.  
+<img src="img/4aGrafos.jpg">  
+
+b) Mostrar la lista de adyacencia del grafo.  
 
 ## CUESTIONARIO
 #
