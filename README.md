@@ -99,6 +99,18 @@ true si hay inclusion y false el caso contrario. (4 puntos)
 
 ## RESOLUCIÓN
 #
+### 2. Implementar el cogido de Grafo cuya representacion sea realizada mediante LISTA DE ADYACENCIA. (3 puntos) ###
+
+La representación de un grafo mediante una lista de adyacencia se puede realizar a través de un arreglo que almacene todos los vértices y una lista enlazada la cual guarde las referencias de los vértices adyacentes a un grafo determinado.
+
+<img src="img/lista_adyacencia.png">
+
+Dentro de la carpeta **src** se encuentra la clase ***Grafo*** la cual es una manera de implementación de un grafo mediante una lista de adayacencia con métodos simples de agregación de vértices y aristas.
+
+<img src="img/grafo_java.png">  
+
+Además se incluyó otra forma de representar los grafos mediante lista de adyacencia y esta se encuentra en la carpeta **Ejercicio02** que cuenta con 5 clases que 
+#
 
 4. Solucionar el siguiente ejercicio: (5 puntos)
 El grafo de palabras se define de la siguiente manera: cada vértice es una palabra
