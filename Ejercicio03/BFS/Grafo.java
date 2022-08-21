@@ -58,23 +58,23 @@ public class Grafo {
     // bfs
     private Queue<Vertice> queue = new LinkedList<Vertice>();
     public String[] bfs() {
-        String[] res = new String[size];
-        vertices[0].visitado = true;
+        String[] res = new String[size];//Se almacenara el orden en el que se recorreran los vertices
+        vertices[0].visitado = true;//Se toma como visitado el primer vertice
         int idx = 0;
-        res[idx++] = vertices[0].nombre;
-        queue.add(vertices[0]);
+        res[idx++] = vertices[0].nombre;//Se almacena en res el nombre del primer vertice
+        queue.add(vertices[0]);//Se almacena en la cola el primer vertice
         while (!queue.isEmpty() ) {
-            Vertice vertex = queue.poll();
-            int nextIdx = getUnvisitedVertex(vertex.indice);
-            while (nextIdx != -1) {
-                vertices[nextIdx].visitado = true;
-                res[idx++] = vertices[nextIdx].nombre;
-                queue.add(vertices[nextIdx]);
-                nextIdx = getUnvisitedVertex(vertex.indice);
+            Vertice vertex = queue.poll();//Se extrae el primer vertice de la cola
+            int nextIdx = getUnvisitedVertex(vertex.indice);//se extrae el indice del primer vertice que no sea visitado en la lista de adyacencia
+            while (nextIdx != -1) {//El bucle continuara hasta que todos los vertices de la lista de adyacencia sean visitados
+                vertices[nextIdx].visitado = true;//Se cambia el estado del vertice no visitado
+                res[idx++] = vertices[nextIdx].nombre;//Se almacena el vertice al arrays res
+                queue.add(vertices[nextIdx]);//Se agrega el vertice a la cola
+                nextIdx = getUnvisitedVertex(vertex.indice);//Se busca el siguiente vertice no visitado de la lista de adyacencia
             }
         }
 
-        // reset vertices
+        // Bucle que devuelve el estado de visitado a false de todos los vertices
         for (Vertice vertex : vertices) {
             if(vertex != null)
                 vertex.visitado = false;
@@ -83,12 +83,12 @@ public class Grafo {
         return res;
     }
 
-    private int getUnvisitedVertex(int index) {
+    private int getUnvisitedVertex(int index) {//Revisara la lista de adyacencia del vertice en la posicion index
         for (int i = 0; i < lista_vertices[index].size(); i++) {
-            if (lista_vertices[index].get(i).visitado == false) {
-                return lista_vertices[index].get(i).indice;
+            if (lista_vertices[index].get(i).visitado == false) {//Se busca el primer vertice no visitado en la lista de adyacencia
+                return lista_vertices[index].get(i).indice;//Se retorna el indice del primer vertice no visitado
             }
         }
-        return -1;
+        return -1;//en caso de que todos los vertices sean visitado se retorna -1
     }
 }
