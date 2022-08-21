@@ -22,6 +22,6 @@ public class Nodo<T> {
     return nextNode;
   }
   public String toString() {
-    return data.toString();
+    return data;
   }
 }

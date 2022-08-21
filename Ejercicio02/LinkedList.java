@@ -25,19 +25,21 @@ public class LinkedList<T>{
       }
     }
 
-    public Nodo<T> search(T data){
-      Nodo nodoActual = root;
+    public T search(T data){
+      Nodo <T> nodoActual = this.root;
       while(nodoActual!= null && !nodoActual.getData().equals(data)){
         nodoActual = nodoActual.getNextNode();
       }
-      return nodoActual;
+      if(nodoActual != null)
+        return nodoActual;
+      return null;
     }
 
     public String toString() {
       String listado = "";
-      Nodo<T> nodoActual = root;
+      Nodo <T> nodoActual = root;
       while(nodoActual != null) {
-        listado += nodoActual.toString() + "  ";
+        listado += nodoActual.getData() + "  ";
         nodoActual = nodoActual.getNextNode();
       }
       return listado;
