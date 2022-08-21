@@ -36,4 +36,13 @@ public class Grafo {
 		}
 	}
 	
+    public void agregarVertice(String nombre) {
+        int indice = size++;
+        vertices[indice] = new Vertice(indice, nombre);
+    }
+ 
+    public void addEdge(int inicio, int fin) {
+    	lista_vertices[inicio].add(vertices[fin]); // En la lista de adyacencia agrega la referencia del vértice
+    	lista_vertices[fin].add(vertices[inicio]);
+    }
 }
