@@ -116,6 +116,52 @@ Además se incluyó otra forma de representar los grafos mediante lista de adyac
 <img src="img/carpeta_ejercicio02.png">
 
 #
+## 3. Implementar los recorridos BFS y DFS: (5 puntos) ##
+En la carpeta Ejercicio 03 se encuentra la implementacion de cada uno de los recorridos:
+a) Carpeta BFS: Se presentan dos archivos, Grafo.java donde se encuentra el algoritmo de BFS y Test.java donde se encuentra un grafo de prueba.
+Con respecto al algoritmo BFS, este retorna el array de String donde se colocaran en orden el recorrido obtenido del algoritmo. Ademas cabe resaltar que se hace uso de una cola para almacenar los vertices pendientes a evaluar. A simples rasgos el algoritmo consiste en ir evaluando los vertices de la cola e ir marcando los vertices adyacentes a este (cambiando el valor booleano de visitado) y almacenandolos en la cola. Esto continuara hasta que la funcion getUnvisitedVertex no encuentra un vertice no visitado en la lista de adyacencia, en ese momento la cola empezara a vaciarse.
+
+```sh
+while (!queue.isEmpty() ) {
+    Vertice vertex = queue.poll();
+    int nextIdx = getUnvisitedVertex(vertex.indice);
+    while (nextIdx != -1) {
+        vertices[nextIdx].visitado = true;
+        res[idx++] = vertices[nextIdx].nombre;
+        queue.add(vertices[nextIdx]);
+        nextIdx = getUnvisitedVertex(vertex.indice);
+    }
+}
+```
+
+b) Carpeta DFS: Se presentan dos archivos, Grafo.java donde se encuentra el algoritmo de DFS y Test.java donde se encuentra un grafo de prueba.
+Con respecto al algoritmo BFS, este retorna el array de String donde se colocaran en orden el recorrido obtenido del algoritmo. Ademas cabe resaltar que se hace uso de una pila para almacenar los vertices pendientes a evaluar. A simples rasgos el algoritmo consiste en ir evaluando los vertices ubicados en la cima de la pila, cada uno de ellos ira marcando el primer vertice no visitado de su lista de adyacencia a la pila (cambiando tambien su estado de visitado), hasta que llegue el punto de que no encuentre algun nodo adyacente al vertice de la cima de la pila, donde empezara a descartarlo. Entonces volvera a evaluar el vertice anterior, si encuentra algun vertice no visitado se seguira de la misma forma, caso contrario se ira vaciando la pila, hasta que no halla algun vertice mas.
+
+```sh
+while (!stack.isEmpty()) {
+    int index = getUnvisitedVertex(stack.peek().indice);
+    if (index == -1) { 
+        stack.pop();
+    } else {
+        vertices[index].visitado = true;
+        res[idx++] = vertices[index].nombre;
+        stack.push(vertices[index]);
+    }
+}
+```
+
+NOTA: la funcion getUnvisitedVertex busca el primer vertice no visitado dentro de la lista de adyecencia del vertice ubicado en el indice dado como parametro
+
+```sh
+private int getUnvisitedVertex(int index) {
+    for (int i = 0; i < lista_vertices[index].size(); i++) {
+        if (lista_vertices[index].get(i).visitado == false) {
+            return lista_vertices[index].get(i).indice;
+        }
+    }
+    return -1;
+}
+```
 
 ## 4. Solucionar el siguiente ejercicio: (5 puntos) ##
 El grafo de palabras se define de la siguiente manera: cada vértice es una palabra
@@ -141,6 +187,10 @@ b) Mostrar la lista de adyacencia del grafo.
 #
 1. ¿Cuantas variantes del algoritmo de Dijkstra hay y cuál es la diferencia entre
 ellas? (1 puntos)  
+    
+En cuanto a su implementacion existen dos tipos: 
+- Dijkstra sin cola de prioridad: presenta una complejidad de O(n^2), utilizado en caso de presentar demasiadas aristas.
+- Dijkstra con cola de prioridad: presenta una complejidad de O(mlogn), utilizado en casos de pocas aristas.
     
 2. Invetigue sobre los ALGORITMOS DE CAMINOS MINIMOS e indique, ¿Qué
 similitudes encuentra, qué diferencias, en qué casos utilizar y porque? (2 puntos)
