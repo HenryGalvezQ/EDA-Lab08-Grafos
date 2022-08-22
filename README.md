@@ -39,7 +39,7 @@
 </tr>
 <tr><td colspan="6">INTEGRANTES:
     <ul>
-        <li>Durand Obando, Eduardo Franshua</li>
+        <li>Eduardo Franshua Durand Obando</li>
         <li>Kevin Jheeremy Alvarez Astete</li>
         <li>Henry Isaias Galvez Quilla</li>
 </td>
@@ -171,7 +171,9 @@ corps y crops no lo son.
 a) Dibuje el grafo definido por las siguientes palabras: words cords corps coops
 crops drops drips grips gripe grape graph  
 
-    -Para la creación del grafo se encontró que cada nodo era inmediatamente adyacente al siguiente ya que solo varían en una sola letra así words, cords, corps, etc, están conectados entre sí pero sin ser un grafo cíclico pero sí conexo. 
+    -Para la creación del grafo se encontró que cada nodo era inmediatamente adyacente al siguiente  
+    ya que solo varían en una sola letra así words, cords, corps, etc, están conectados  
+    entre sí pero sin ser un grafo cíclico pero sí conexo.  
 ##  
 <img src="img/4aGrafos.jpg">  
 
